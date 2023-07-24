@@ -65,7 +65,7 @@ public class TestPage5 extends ParentPage{
     public TestPage5 checkAlertMessage(String alertText){
         webDriverWait15.until(ExpectedConditions.visibilityOf(alertMessage));
         Assert.assertEquals("Text in alert defers from " + alertMessage.getText(), alertText, alertMessage.getText());
-        logger.info(TestData.ALERT_MESSAGE + " match with " + alertMessage.getText().trim());
+        logger.info(TestData.ALERT_MESSAGE + " MATCHES WITH " + alertMessage.getText().trim());
         return this;
     }
 }

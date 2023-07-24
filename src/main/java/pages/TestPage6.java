@@ -76,7 +76,7 @@ public class TestPage6 extends ParentPage{
         WebElement tableRow = table.findElement(By.xpath(String.format(TABLE_ROW, rowNumber)));
         WebElement tableCell = tableRow.findElement(By.xpath(String.format(TABLE_COLUMN, columnNumber)));
         Assert.assertEquals("Value "+tableCell.getText() +" is not found", tableData, tableCell.getText());
-        logger.info(tableCell.getText());
+        logger.info(tableCell.getText()+ " Is equal to "+tableData);
         return this;
     }
 }
