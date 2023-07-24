@@ -82,9 +82,10 @@ public class TestPage1 extends ParentPage {
     @Step
     public TestPage1 checkInputValues(String email, String password){
         SoftAssertions softAssert = new SoftAssertions();
-        softAssert.assertThat(email).isEqualTo(emailInput.getAttribute("value"));
-        softAssert.assertThat(password).isEqualTo(passwordInput.getAttribute("value"));
-        logger.info("Inserted values verified");
+        softAssert.assertThat(email).as(email + " is not equal to " + emailInput.getAttribute("value")).isEqualTo(emailInput.getAttribute("value"));
+        softAssert.assertThat(password).as(password + " is not equal to " + passwordInput.getAttribute("value")).isEqualTo(passwordInput.getAttribute("value"));
+        logger.info(email+" is equal to "+emailInput.getAttribute("value"));
+        logger.info(password+" is equal to "+passwordInput.getAttribute("value"));
         softAssert.assertAll();
         return this;
     }

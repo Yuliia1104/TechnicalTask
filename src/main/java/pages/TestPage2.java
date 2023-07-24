@@ -47,7 +47,7 @@ public class TestPage2 extends ParentPage {
         SoftAssertions softAssert = new SoftAssertions();
         for (int i = 0; i < expectedList.size(); i++) {
             softAssert.assertThat(expectedList.get(i)).as(expectedList.get(i)+" is not on the list!").isIn(actualList);
-            logger.info("All values match");
+            logger.info(expectedList.get(i)+" is equal to "+ actualList.get(i));
 
         }
         softAssert.assertAll();
@@ -63,8 +63,8 @@ public class TestPage2 extends ParentPage {
 
         SoftAssertions softAssert = new SoftAssertions();
         for (int i = 0; i < expectedListOfItemsWithBadges.size(); i++) {
-            logger.info(expectedListOfItemsWithBadges.get(i) +" contains " + listOfBadges.get(i).getText());
                 softAssert.assertThat(expectedListOfItemsWithBadges.get(i)).as("Badge does not match").contains(listOfBadges.get(i).getText());
+            logger.info(expectedListOfItemsWithBadges.get(i) +" contains " + listOfBadges.get(i).getText());
         }
         softAssert.assertAll();
         return this;
